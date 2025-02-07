@@ -1,0 +1,192 @@
+/* ---------------------------------------- Main ---------------------------------------- */
+:root {
+    --col_white: #ffffff;
+    --col_grey_border: #313131;
+    --col_grey: #222222;
+    --col_black: #0f1111;
+    --col_cyan: #00bea5;
+}
+
+* {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+html,
+body,
+nav,
+a,
+p,
+img {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+    font-weight: 600;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    color: var(--col_white);
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--col_grey);
+}
+
+p {
+    filter: brightness(0.7);
+}
+
+h1,
+summary {
+    font-size: 1.2em;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+a {
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+a:hover {
+    transform: scale(1.1);
+    filter: brightness(0) saturate(100%) invert(54%) sepia(73%) saturate(2953%) hue-rotate(136deg) brightness(98%) contrast(101%);
+}
+
+.no_cyan:hover {
+    filter: none;
+}
+
+@media (max-width: 450px) {
+    .header>h1 {
+        font-size: 0.9em;
+    }
+}
+
+/* ---------------------------------------- Nav ---------------------------------------- */
+nav {
+    top: 0;
+    justify-content: space-between;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid var(--col_cyan);
+    background-color: var(--col_black);
+    width: 100%;
+    height: 3em;
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    align-items: center;
+}
+
+nav>a {
+    height: 55%;
+    padding: 0em 1em 0em 1em;
+}
+
+nav>a>img {
+    height: 100%;
+}
+
+/* ---------------------------------------- Page ---------------------------------------- */
+.page {
+    margin: 4em 1em 4em 1em;
+}
+
+details {
+    transition: 0.5s;
+    padding: 1em;
+    border-radius: 20px;
+    margin-bottom: 2em;
+    border: 1px solid var(--col_grey_border);
+    background-color: var(--col_black);
+}
+
+details:hover {
+    border-radius: 25px;
+}
+
+summary {
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 1em 0em 1em 0em;
+    text-align: center;
+}
+
+summary:hover {
+    letter-spacing: 3px;
+    color: var(--col_cyan);
+}
+
+/* ---------------------------------------- Cards ---------------------------------------- */
+.card {
+    transition: 0.5s;
+    padding: 1em;
+    margin-bottom: 1em;
+    background-color: var(--col_grey);
+    border: 1px solid var(--col_grey_border);
+    border-radius: 15px;
+    break-inside: avoid;
+}
+
+.card:hover {
+    border-top-color: var(--col_cyan);
+    border-bottom-color: var(--col_cyan);
+    border-radius: 20px;
+}
+
+.card>a {
+    padding-top: 0.5em;
+    height: 2em;
+    float: left;
+}
+
+.card>a>img {
+    height: 100%;
+}
+
+.card>h1 {
+    padding-left: 2.5em;
+}
+
+.card>h1::after {
+    content: "";
+    display: flex;
+    margin-top: 0.5em;
+    width: 3em;
+    height: 0.2em;
+    border-radius: 0.1em;
+    background: var(--col_cyan);
+}
+
+.card>p {
+    padding-left: 3em;
+}
+
+.card>img,
+.card>video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cards {
+    padding-top: 1em;
+    column-count: 2;
+}
+
+@media (max-width: 900px) {
+    .cards {
+        column-count: 1;
+    }
+}
